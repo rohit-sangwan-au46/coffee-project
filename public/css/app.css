@@ -1,0 +1,42 @@
+.card-drink-item{
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+.detail{
+    display: flex;
+}
+.price{
+    margin-top:5px;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+.detail-name{
+    font-size: 55px;
+    color:yellowgreen;
+    margin-left: 10%;
+}
+.detail-description{
+    font-size: 20px;
+    color: yellow;
+    width: 560px;
+}
+.create{
+    text-align: left;    
+}
+.create-page{
+    color:yellow;
+    font-size: 20px;
+}
+.create-button{
+    margin-left: 30%;
+}
+.update-button{
+    margin-left: 10%;
+}
+.table{
+    font-size: large;
+    color:black;
+    background-color:burlywood;
+}

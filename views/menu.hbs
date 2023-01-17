@@ -1,0 +1,28 @@
+<div class="mt4">
+    <div class="row">
+        {{#each drinks}}
+        <div class="col-sm-6 col-lg-4">
+            <div class="card card-drink-item" style="width: 18rem;">
+                <a href="/menu/{{this.slug}}">
+                    <img src="/img/{{this.img}}" class="card-img-top" alt="Image">
+                </a>
+                <div class="card-body">
+                    <a href="/menu/{{this.slug}}">
+                        <h5 class="card-title">{{this.name}}</h5>
+                    </a>
+                    <p class="card-text">{{this.description}}</p>
+                    <div class="detail"><a href="#" class="btn btn-primary">&nbsp;&nbsp;First&nbsp;&nbsp;</a>
+                        <h4 class="price">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{this.price}} Rs</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+<div class="create">
+    <br><br>
+    <a href="/menu/create" class="btn btn-primary btn-lg active create-button" role="button" aria-pressed="true">More drinks</a>
+    <a href="/menu/manage" class="btn btn-primary btn-lg active update-button" role="button" aria-pressed="true">Beverage management</a>
+    <br><br>
+</div>

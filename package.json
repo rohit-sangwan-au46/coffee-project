@@ -1,0 +1,22 @@
+{
+  "name": "coffee-shop",
+  "version": "1.0.0",
+  "description": "simple webapp for cafe",
+  "main": "main.js",
+  "scripts": {
+    "start": "nodemon --inspect main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rohit",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.10.3",
+    "mongoose-slug-generator": "^1.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

@@ -1,0 +1,78 @@
+<div class="mt-4">
+	<h1 style="text-align: center;color:springgreen">Beverage management</h1>
+	<table class="table mt-4">
+		<thead>
+			<tr>
+				<th scope="col">STT</th>
+				<th scope="col">Name</th>
+				<th scope="col">Price</th>
+				<th scope="col">Photo</th>
+				<th scope="col">Description</th>
+				<th scope="col">Video ID</th>
+				<th scope="col"></th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each drinks}}
+			<tr>
+				<th scope="row">{{SUM @index 1}}</th>
+				<td>{{this.name}}</td>
+				<td>{{this.price}}</td>
+				<td>{{this.img}}</td>
+				<td>{{this.description}}</td>
+				<td>{{this.videoID}}</td>
+				<td>
+					<a href="/menu/manage/{{this._id}}/edit" class="btn btn-success">Fix</a>
+					<a href="" class="btn btn-danger mt-1" data-toggle="modal" data-id="{{this._id}}"
+						data-target="#delete-drinks-modal">Delete</a>
+				</td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</div>
+
+
+{{!-- Confirm Delete --}}
+<div id="delete-drinks-modal" class="modal" tabindex="-1">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Warning !</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<p>Confirm deletion This drink?</p>
+			</div>
+			<div class="modal-footer">
+				<button id="btn-delete-drinks" type="button" class="btn btn-success">Confirm</button>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+{{!-- DELETE hidden form --}}
+<form name="delete-hidden-form" method="POST"></form>
+
+<script>
+	//Create event that listens for jQuery to be loaded, $ will not give an error
+	document.addEventListener('DOMContentLoaded', () => {
+		var drinksID;
+		var deleteForm = document.forms['delete-hidden-form'];
+		//get ID Drinks
+		$('#delete-drinks-modal').on('show.bs.modal', (event) => {
+			var button = $(event.relatedTarget);
+			drinksID = button.data('id');
+		})
+
+		// Delete Drinks
+		var btnDeleteDrinks = document.getElementById('btn-delete-drinks');
+		btnDeleteDrinks.onclick = function () {
+			deleteForm.action = '/menu/manage/' + drinksID + '?_method=DELETE';
+			deleteForm.submit();
+		}
+	})	
+</script>

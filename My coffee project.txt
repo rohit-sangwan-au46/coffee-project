@@ -1,0 +1,16 @@
+                                            Project Name - Coffee Shop
+
+Summary:
+1) The coffee shop website includes all of our menu items of coffee.
+2) I will add a pictures of each items to show how our items look like.
+3) I provide our contact details, all the details of our coffee shop on our website.
+4) I can order our coffee or snacks through these website with the payment
+option .
+5) There are two options of payment which are Online payment and cash on delivery
+, both options are available for ordering any items.
+6) All the users have their id and password. For using these website they have to
+register/signup first and login account with their password and user can use these
+website for order.
+
+The technologies i will use are HTML, CSS, Javascript, bootstrap, node.js, express,
+Mongodb(no-sql).
