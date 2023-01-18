@@ -2,7 +2,7 @@ const express = require('express');
 const handlebars = require('express-handlebars');
 const methodOverride = require('method-override');
 const app = express();
-const port = 8000;
+
 
 //Inport Route
 const route = require('./routes');
@@ -40,6 +40,7 @@ app.set('views', 'views');
 route(app);
 
 //Listen port 
-app.listen(port, () => {
-  console.log('<< Deploy at http://localhost:' + port + ' >>');
-});
+const PORT = process.env.PORT || 8897
+ app.listen(PORT, function(){
+  console.log("SERVER IS STARTED");
+ })
