@@ -7,6 +7,9 @@
     "start": "nodemon --inspect main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines":{
+    "node": "16.15.1"
+  },
   "author": "rohit",
   "license": "ISC",
   "dependencies": {
